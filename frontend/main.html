@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/logo-base-1200x1200.png"
+    />
+    <title>Music for Your Weather</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/b6fe51c8e7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div id="loader-overlay">
+      <div class="loader"></div>
+    </div>
+
+    <!-- ========================= NAVBAR ========================= -->
+    <nav class="navbar">
+      <div class="nav-logo">
+        <a href="/">
+          <img class="logo-img" src="./assets/logo-base-1200x1200.png" />
+          <span class="logo-txt">WeatherVibes</span>
+        </a>
+      </div>
+
+      <div class="nav-btn">
+        <a
+          href="https://github.com/amitt39/WeatherApp"
+          target="_blank"
+          class="social-btn"
+        >
+          <i class="fa-brands fa-github"></i> Source Code
+        </a>
+
+        <a href="/" class="cta">Go Home</a>
+      </div>
+    </nav>
+
+    <!-- ========================= HERO SECTION ========================= -->
+    <main class="hero-section">
+      <!-- Emoji Background -->
+      <div class="emoji-container">
+        <img
+          class="emoji e1"
+          src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Cloud%20with%20Rain.png"
+          alt="Cloud with Rain"
+        />
+        <img
+          class="emoji e2"
+          src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Cloud%20with%20Lightning%20and%20Rain.png"
+          alt="Cloud with Lightning and Rain"
+        />
+        <img
+          class="emoji e3"
+          src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Cloud%20with%20Snow.png"
+          alt="Cloud with Snow"
+        />
+        <img
+          class="emoji e7"
+          src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Sun%20Behind%20Small%20Cloud.png"
+          alt="Sun Behind Small Cloud"
+        />
+        <img
+          class="emoji e6"
+          src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Sun%20Behind%20Rain%20Cloud.png"
+          alt="Sun Behind Rain Cloud"
+        />
+      </div>
+
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <p class="banner">Discover the perfect soundtrack for every weather.</p>
+
+        <h1 class="title">Find Your Perfect Playlist</h1>
+
+        <p class="description">
+          Enter your city name and discover a playlist tailored to your weather.
+        </p>
+
+        <!-- Input Section -->
+        <div class="location-input-section">
+          <input
+            type="text"
+            id="location"
+            class="location-inp"
+            placeholder="Enter your City"
+            required
+          />
+
+          <button class="submit-btn" type="button" id="submit">
+            <span><i class="fa-brands fa-spotify"></i></span>
+            Find My Playlist
+          </button>
+        </div>
+
+        <div class="displayResult">
+          <div class="weatherDetails">
+            <div class="weather-item">
+              <span class="w-label">Temperature:</span>
+              <span class="w-value" id="tempVal">--</span>
+            </div>
+            <div class="weather-item">
+              <span class="w-label">Condition:</span>
+              <span class="w-value" id="conditionVal">--</span>
+            </div>
+            <div class="weather-item">
+              <span class="w-label">City:</span>
+              <span class="w-value" id="cityVal">--</span>
+            </div>
+          </div>
+
+          <div class="songs">
+            <a id="song1" target="_blank">
+              <img id="songImg1" />
+              <div id="songName1"></div>
+              <div id="artistName1"></div>
+            </a>
+            <a id="song2" target="_blank">
+              <img id="songImg2" />
+              <div id="songName2"></div>
+              <div id="artistName2"></div>
+            </a>
+            <a id="song3" target="_blank">
+              <img id="songImg3" />
+              <div id="songName3"></div>
+              <div id="artistName3"></div>
+            </a>
+            <a id="song4" target="_blank">
+              <img id="songImg4" />
+              <div id="songName4"></div>
+              <div id="artistName4"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer>
+      <div class="footer-logo nav-logo">
+        <a href="/">
+          <img class="logo-img" src="./assets/logo-base-1200x1200.png" />
+          <span class="footer-logo-txt logo-txt">WeatherVibes</span>
+        </a>
+      </div>
+
+      <div class="footer-description">
+        Built in
+        <img
+          src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Cloud%20with%20Lightning%20and%20Rain.png"
+          width="25"
+          height="25"
+        />
+        by <span class="creator">Amit Sonagra.</span>Follow me on<a
+          class="github"
+          target="_blank"
+          href="https://github.com/amitt39"
+          >GitHub</a
+        >.
+      </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
