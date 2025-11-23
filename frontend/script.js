@@ -106,7 +106,6 @@ function updatePlaylistUI(tracks) {
     setTrackCard(i + 1, track);
   });
 }
-
 findMyPlaylistBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   showLoader();
@@ -114,29 +113,29 @@ findMyPlaylistBtn.addEventListener("click", async (e) => {
 
   try {
     const weatherData = await findPlayList();
-    if (!weatherData) return; // don't show result if weather failed / city missing
+    if (!weatherData) return; 
 
     updateWeatherUI(weatherData);
 
     const category = decideCategories(weatherData);
 
-    try {
-      const playlistResponse = await axios.get(`${BASE_URL}/api/playlist`, {
-        params: { mood: category },
-      });
+    const playlistResponse = await axios.get(`${BASE_URL}/api/playlist`, {
+      params: { mood: category },
+    });
 
-      const tracks = playlistResponse.data;
-      if (!tracks || tracks.length === 0) {
-        alert("No playlist found for this mood.");
-        return;
-      }
-
-      updatePlaylistUI(tracks);
-      showResult(); // ✅ only when all data is ready
-    } catch (error) {
-      console.error("Playlist error:", error.response?.data || error.message);
-      alert("Couldn't fetch playlist. Please try again.");
+    const tracks = playlistResponse.data;
+    if (!tracks || tracks.length === 0) {
+      alert("No playlist found for this mood.");
+      return;
     }
+
+    updatePlaylistUI(tracks);
+
+
+    showResult();
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong. Please try again.");
   } finally {
     hideLoader();
     findMyPlaylistBtn.disabled = false;
